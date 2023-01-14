@@ -90,3 +90,10 @@ class FoodRecommendation:
         self.update_orderFile([orderid, order_time, ordered_dish, recommened_dish])
         self.update_orderPerformanceFile(orderid, ordered_dish, recommened_dish)
         return orderid
+    
+    def order_rating(self, orderRating):
+        with open('v1_order_rating.csv', 'a') as f_object:
+            writer_object = writer(f_object)
+            writer_object.writerow(orderRating)
+            f_object.close()
+        
