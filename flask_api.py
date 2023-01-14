@@ -11,6 +11,11 @@ import FoodRecommendation
 app = Flask(__name__)
 foodRecommendation = FoodRecommendation.FoodRecommendation()
 
+
+@app.route('/', methods=['GET'])
+def getstatus():
+    return 'ok'
+
 @app.route('/dish', methods=['GET'])
 def get_dish():
     return foodRecommendation.RecipeDataset[['name','cuisine']].to_dict()
