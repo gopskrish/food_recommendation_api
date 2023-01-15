@@ -10,7 +10,10 @@ currenctly limiting the dataset size to 30 dishes because of the file upload siz
  
 #requirements 
 pip install -r requirements.txt 
-
+For mac user's only: 
+Install the following package also for the proper GUI experience in mac
+pip install tkmacosx
+ 
 #steps to run 
 python chatbot.py
 
