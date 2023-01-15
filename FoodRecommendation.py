@@ -39,8 +39,8 @@ class FoodRecommendation:
          allergyDataset = pd.read_csv("Allergy.csv").dropna()
          allergyDataset = allergyDataset.iloc[::,1:] 
          allergyDataset['Food'] = allergyDataset['Food'].str.lower().str.replace('[^a-zA-Z]','', regex=True)
-         recipeDataset = pd.read_csv("recipe_preprocessed.csv").dropna()
-        # Creating the soup column as a combination of all the features
+         recipeDataset = pd.read_csv("recipe_preprocessed.csv")
+         # Creating the soup column as a combination of all the features
          recipeDataset['soup'] = recipeDataset.apply(lambda x: ''.join(x['cuisine'] + ' ' + x['type'] + ' ' + x['ingredients'] + ' ' + x['seasons'] + ' ' + x['taste']), axis=1)
          return (allergyDataset, recipeDataset)
 
