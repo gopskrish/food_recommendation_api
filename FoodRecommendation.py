@@ -71,8 +71,8 @@ class FoodRecommendation:
         query.append(season_dict.get(currentMonth))
         vector = self.Vectorize.transform([' '.join(query)])
         scores = self.computeScores(vector)
-        sorted_index = pd.Series(scores.toarray().T[0]).sort_values(ascending = False)[0:10].index
-        return self.filter_allergy(sorted_index, allergy)
+        sorted_index = pd.Series(scores.toarray().T[0]).sort_values(ascending = False)[0:20].index
+        return self.filter_allergy(sorted_index, allergy)[0:10]
 
     # update_orderFile function takes the ordered details as input and saves in a csv file
     def update_orderFile(order):
