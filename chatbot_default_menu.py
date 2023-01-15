@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import *
 import pandas as pd
 
-data = pd.read_csv('recipe_preprocessed.csv')
+data = pd.read_csv('default_recipe.csv')
 
 op = data['name'] + "   -   " +  data['allergy']
 root = tk.Tk()
