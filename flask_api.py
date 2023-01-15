@@ -33,4 +33,4 @@ def order_food():
     return foodRecommendation.order_food(request.args.get('ordered_dishes'))#(request.args.get('ordered_dishes'), request.args.get('recommended_dishes'))
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run()
